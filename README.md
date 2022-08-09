@@ -15,7 +15,8 @@ https://www.kaggle.com/datasets/jeegarmaru/campaign-contributions-19902016
 
 • Overview - Machine Learning will be applied to this data set to address our main problem statement:  Predict a winner in a political race based on selected features from the data. We will be testing and comparing different models to see which performs the best in terms of accuracy and best fit.
 
-MODELS:</br>
+MODELS:
+
 	- Supervised:
 		•Random Forest Classifier
 		•Logistic Regression
