@@ -15,7 +15,7 @@ https://www.kaggle.com/datasets/jeegarmaru/campaign-contributions-19902016
 
 • Overview - Machine Learning will be applied to this data set to address our main problem statement:  Predict a winner in a political race based on selected features from the data. We will be testing and comparing different models to see which performs the best in terms of accuracy and best fit.
 
-MODELS:
+MODELS:</br>
 	Supervised:
 		•Random Forest Classifier
 		•Logistic Regression
@@ -28,17 +28,17 @@ PREPROCESSING:
 	Cleaning and encoding categorical variables.  Bucketing rare values may be necessary.  PCA for Clustering.  Scaling/Standardizing. Joining Candidates to PACS table as to include features from two tables.  It's also worth mentioning that we may decide to select only the most recent years, 2000-2016, due to inflation devaluing money and including most relevant data.
 
 FEATURES:
-	c.party
-	c.dist_id_run_for
-	c.CRPICO
-	c.NOPACS	
-	c.raised_from_pacs
-	c.raised_from_individuals
-	c.raised_total
-	c.raised_unitemized
-	p.pacid
-	p.Amount
-	p.type
+	- c.party 
+	- c.dist_id_run_for
+	- c.CRPICO
+	- c.NOPACS	
+	- c.raised_from_pacs
+	- c.raised_from_individuals
+	- c.raised_total
+	- c.raised_unitemized
+	- p.pacid
+	- p.Amount
+	- p.type
 
 TARGET:
 	c.result - 1:W, 0:L
@@ -53,5 +53,3 @@ In this project we will be utilizing a data set of Kaggle that contains data fro
 
 
 We will be using Postgres SQL to create the connections through out are data and put together a cohesive and clear picture.
-
-**New Line I just Added**
