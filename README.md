@@ -53,5 +53,3 @@ In this project we will be utilizing a data set of Kaggle that contains data fro
 
 
 We will be using Postgres SQL to create the connections through out are data and put together a cohesive and clear picture.
-
-**New Line I just Added**
