@@ -9,6 +9,7 @@ Team "Analyze This!" has discussed our communication protocols and agreed to the
 
 
 ## Machine Learning Model
+
 US Federal Campaign Finance data 1990-2016
 https://www.kaggle.com/datasets/jeegarmaru/campaign-contributions-19902016
 
@@ -44,6 +45,7 @@ TARGET:
 
 RESULT:
 	Hopefully, our supervised models will provide us with accurate predictions for election results.  Our un-supervised approach may help us group candidates based on fiscal activity and help better understand the politics and power play.
+
 
 ## Database
 
