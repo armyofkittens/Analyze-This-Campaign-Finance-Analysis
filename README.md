@@ -28,7 +28,7 @@ MODELS:
 PREPROCESSING:
 	Cleaning and encoding categorical variables.  Bucketing rare values may be necessary.  PCA for Clustering.  Scaling/Standardizing. Joining Candidates to PACS table as to include features from two tables.  It's also worth mentioning that we may decide to select only the most recent years, 2000-2016, due to inflation devaluing money and including most relevant data.
 
-FEATURES:</br>
+FEATURES:
 	c.party 
 	• c.dist_id_run_for
 	• c.CRPICO
