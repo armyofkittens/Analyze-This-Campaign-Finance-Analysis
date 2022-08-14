@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022 Election Predictions</title>
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+        />
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="'bg-light">
+    <!-- Navigation Bar -->
+    <div class="wrapper">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <a class="navbar-brand" value="" href="index.html">2022 Predictions</a>
+        </nav>
+    </div>
+    <!-- Jumbotron Header -->
+    <div class="jumbotron">
+        <h1 class="display-4">2022 Election Predictions</h1>
+    </div>
+    <!-- Article, Title and Paragraph -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Power of Machine Learning <small>DU Students Weigh In</small></h3>
+            </div>
+            <div class="col-md-8">
+                <p>
+                    RFC ML predictons. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Filter and Table -->
+    <!-- Filter -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <form class="bg-light">
+                    <p>Filter Search</p>
+                    <ul class="list-group bg-light">
+                        <li class="list-group-item bg-light">
+                            <label for="date">Enter Candidate</label>
+                            <input type="text" placeholder="Name" id="candidate" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">Enter State</label>
+                            <input type="text" placeholder="ST" id="State" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">Enter Party</label>
+                            <input type="text" placeholder="R/P/3" id="Party" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">Enter Prediction</label>
+                            <input type="text" placeholder="W/L" id="Prediction" />
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <!-- Table -->
+            <div class="col-md-9">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Candidate</th>
+                            <th>State</th>
+                            <th>Office</th>
+                            <th>Party</th>
+                            <th>CRPICO</th>
+                            <th>Raised_From_Pacs</th>
+                            <th>Raised_From_Individuals</th>
+                            <th>Raised_Unitemized</th>
+                            <th>Raised_Total</th>
+                            <th>Prediction</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Link to D3.js, data.js, app.js CDN --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src="static/js/data.js"></script>
+    <script src="static/js/app.js"></script>
+    
+</body>
+</html>
