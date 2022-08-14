@@ -33,3 +33,6 @@ TARGET:
 
 RESULT:
 	Hopefully, our supervised models will provide us with accurate predictions for election results.  Our un-supervised approach may help us group candidates based on fiscal activity and help better understand the politics and power play.
+
+
+Notes: States can make an impact and maybe we should include???????
