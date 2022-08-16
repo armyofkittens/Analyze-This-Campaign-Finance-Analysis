@@ -12,6 +12,7 @@
         crossorigin="anonymous"
         />
     <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body class="'bg-light">
     <!-- Navigation Bar -->
@@ -28,17 +29,16 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
-                <h3>Power of Machine Learning <br><small>DU Students Weigh In</small></h3>
+                <h3>Machine Learning Predicts Election<br><small>DU Bootcamp Final Project</small></h3>
             </div>
             <div class="col-md-9">
                 <p>
-                    RFC ML predictons. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a type specimen book. It has survived
-                    not only five centuries, but also the leap into electronic typesetting, remaining essentially
-                    unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-                    including versions of Lorem Ipsum.<br><br>
+                    Data provided by <a href="https://www.opensecrets.org/">Open Secrets</a> that includes information 
+                    on campaign funding and election results from 1990-2016 was fit to a machine learning algorithm 
+                    and generated predictions with a 93% accuracy score.  The machine learning model used is 
+                    a Random Forest Classifier.  Features include Party, CRPICO, and all funding totals.  The model was then applied to new data for 2022 candidates from the
+                    <a href="https://www.fec.gov/data/browse-data/?tab=candidates">Federal Election Commision</a> and 
+                    predictions are as follows:<br><br>
                 </p>
             </div>
         </div>
@@ -60,8 +60,16 @@
                             <input type="text" placeholder="ST" id="Cand_Office_St" />
                         </li>
                         <li class="list-group-item bg-light">
+                            <label for="date">Enter Office</label>
+                            <input type="text" placeholder="House/Senate" id="Cand_Office" />
+                        </li>
+                        <li class="list-group-item bg-light">
                             <label for="date">Enter Party</label>
                             <input type="text" placeholder="R/D/3" id="party" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">Enter CRPICO</label>
+                            <input type="text" placeholder="C/I/O" id="crpico" />
                         </li>
                         <li class="list-group-item bg-light">
                             <label for="date">Enter Prediction</label>
@@ -70,6 +78,8 @@
                     </ul>
                 </form>
                 <p><a class="btn btn-info btn-lg" href="index.html" role="button">Clear and Reload</a></p>
+                <!-- Plotly bar chart -->
+                <div id="plotArea"></div>
             </div>
             <!-- Table -->
             <div class="col-md-9">
@@ -83,8 +93,8 @@
                             <th>CRPICO</th>
                             <th>Raised_From_Pacs</th>
                             <th>Raised_From_Individuals</th>
-                            <th>Raised_Unitemized</th>
                             <th>Raised_Total</th>
+                            <th>Raised_Unitemized</th>
                             <th>Prediction</th>
                         </tr>
                     </thead>

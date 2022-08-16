@@ -77,3 +77,78 @@ function updateFilters() {
 
   // Build the table when the page loads
   buildTable(tableData);
+
+
+
+
+
+
+
+
+
+
+
+  
+/////////// BAR CHART ///////////////
+
+// find number of occurences for each party
+function findOcc(arr, key){
+  let arr2 = [];
+  
+  arr.forEach( x => {
+  if(arr2.some(val => { return val[key] == x[key]})) {
+    arr2.forEach(k=>{
+      if(k[key] === x[key]){
+        k["occurrence"]++
+      }
+    })
+  }else{
+    let a = {}
+    a[key] = x[key]
+    a["occurrence"] = 1
+    arr2.push(a);
+  }
+})
+return arr2
+}
+
+let key = "party"
+console.log(findOcc(data, key))
+
+let arr3 = findOcc(data, key)
+console.log(arr3)
+
+
+// Create Bar Chart
+// define x and y values
+let yticks = []
+let counts = []
+arr3.forEach( x => {
+  yticks.push(x.party)
+  console.log(typeof x.party)
+  counts.push(x.occurrence)
+})
+
+
+console.log("yticks: " + yticks)
+console.log("count : " + counts)
+// Trace 
+var barData = [{
+    x: counts,
+    y: yticks.toString(),
+    type: 'bar',
+    orientation: 'h'          
+}];
+
+// Layout 
+var barLayout = {
+    title: "Number of Candidates per Party",
+    margin: {
+      l: 125,
+      r: 125,
+      b: 80,
+      t: 90
+    }
+};
+// Plot  
+Plotly.newPlot("plotArea", barData, barLayout);
