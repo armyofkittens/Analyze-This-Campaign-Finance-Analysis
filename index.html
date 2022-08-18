@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022 Election Predictions</title>
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+        />
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body class="'bg-light">
+    <!-- Navigation Bar -->
+    <div class="wrapper" >
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <a class="navbar-brand" value="" href="#welcome"></a>
+        </nav>
+    </div>
+    <!-- Jumbotron Header -->
+    <div class="jumbotron" id="welcome">
+        <h1 style="background-color:white" class="display-4">2022 Election Predictions</h1>
+    </div>
+    <!-- Article, Title and Paragraph -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Machine Learning Predicts Election<br><small>DU Bootcamp Final Project</small></h3>
+            </div>
+            <div class="col-md-9">
+                <p>
+                    Data provided by <a href="https://www.opensecrets.org/">Open Secrets</a> that includes information 
+                    on campaign funding and election results from 1990-2016 was fit to a machine learning algorithm 
+                    and generated predictions with a 93% accuracy score.  The machine learning model used is 
+                    a Random Forest Classifier.  Features include Party, CRPICO, and all funding totals.  The model was then applied to new data for 2022 candidates from the
+                    <a href="https://www.fec.gov/data/browse-data/?tab=candidates">Federal Election Commision</a> and 
+                    predictions are as follows:<br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Filter and Table -->
+    <!-- Filter -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <form class="bg-light">
+                    <p>Filter Search</p>
+                    <ul class="list-group bg-light">
+                        <li class="list-group-item bg-light">
+                            <label for="date">Enter Candidate</label>
+                            <input type="text" placeholder="LAST, FIRST" id="first_last_party" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">Enter State</label>
+                            <input type="text" placeholder="ST" id="Cand_Office_St" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">Enter Office</label>
+                            <input type="text" placeholder="House/Senate" id="Cand_Office" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">Enter Party</label>
+                            <input type="text" placeholder="R/D/3" id="party" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">Enter CRPICO</label>
+                            <input type="text" placeholder="C/I/O" id="crpico" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">Enter Prediction</label>
+                            <input type="text" placeholder="W/L" id="preds" />
+                        </li>
+                    </ul>
+                </form>
+                <p><a class="btn btn-info btn-lg" href="index.html" role="button">Clear and Reload</a></p>
+                <!-- Plotly bar chart -->
+                <div id="party_count"></div>
+                <!-- Plotly bar chart -->
+                <div id="party_dollars"></div>
+                <!-- Plotly bar chart -->
+                <div id="win_counts"></div>
+            </div>
+            <!-- Table -->
+            <div class="col-md-9">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Candidate</th>
+                            <th>State</th>
+                            <th>Office</th>
+                            <th>Party</th>
+                            <th>CRPICO</th>
+                            <th>Raised_From_Pacs</th>
+                            <th>Raised_From_Individuals</th>
+                            <th>Raised_Total</th>
+                            <th>Raised_Unitemized</th>
+                            <th>Prediction</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Link to D3.js, data.js, app.js CDN --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
