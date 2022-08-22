@@ -91,6 +91,8 @@ function updateFilters() {
   
 /////////// BAR CHARTS ///////////////
 
+var config = {responsive: true}
+
 //// PARTY COUNT //////////////////////////////////////////////////
 // Function to find counts for a key in the data
 function findOcc(arr, key){
@@ -151,18 +153,21 @@ var barData = [{
 
 // Layout 
 var barLayout = {
-    title: "Count of Candidates per Party",
+    title: {
+      text: "Count of Candidates per Party",
+      x: 0.10,
+    },
     width: 500,
     height: 400,
     margin: {
-      l: 100,
-      r: 100,
+      l: 50,
+      r: 150,
       b: 115,
       t: 85
     }
 };
 // Plot  
-Plotly.newPlot("party_count", barData, barLayout);
+Plotly.newPlot("party_count", barData, barLayout, config);
 
 
 
@@ -209,18 +214,21 @@ var barData2 = [{
 
 // Layout 
 var barLayout2 = {
-  title: "Total $ Raised per Party",
+  title: {
+    text: "Total Raised per Party ($)",
+    x: 0.10,
+  },
   width: 500,
   height: 400,
   margin: {
-    l: 100,
-    r: 100,
+    l: 50,
+    r: 150,
     b: 145,
     t: 55
   }
 };
 // Plot  
-Plotly.newPlot("party_dollars", barData2, barLayout2);
+Plotly.newPlot("party_dollars", barData2, barLayout2, config);
 
 
 
@@ -304,16 +312,78 @@ var barData3 = [{
 
 // Layout 
 var barLayout3 = {
-  title: "Total Wins per Party",
+  title: {
+    text: "Total Wins per Party",
+    x: 0.10,
+  },
   width: 500,
   height: 400,
   margin: {
-    l: 100,
-    r: 100,
+    l: 50,
+    r: 150,
     b: 175,
     t: 25
   }
 };
 // Plot  
-Plotly.newPlot("win_counts", barData3, barLayout3);
+Plotly.newPlot("win_counts", barData3, barLayout3, config);
 
+
+
+
+
+////////////// HEATMAP /////////////////////
+
+d3.csv("../2022 predictions/states_raised_totals.csv", function(err, rows){
+      function unpack(rows, key) {
+          return rows.map(function(row) { return row[key]; });
+      }
+
+      var mapData = [{
+          type: 'choropleth',
+          locationmode: 'USA-states',
+          locations: unpack(rows, 'State'),
+          z: unpack(rows, 'Total'),
+          text: unpack(rows, 'State'),
+          zmin: 100,
+          zmax: 100000000,
+          colorscale: [
+              [0, 'rgb(242,240,247)'], [0.2, 'rgb(218,218,235)'],
+              [0.4, 'rgb(188,189,220)'], [0.6, 'rgb(158,154,200)'],
+              [0.8, 'rgb(117,107,177)'], [1, 'rgb(84,39,143)']
+          ],
+          colorbar: {
+              title: 'USD',
+              thickness: 5
+          },
+          marker: {
+              line:{
+                  color: 'rgb(255,255,255)',
+                  width: 2
+              }
+          }
+      }];
+
+
+      var layout = {
+        title: {
+          text: "Total Raised by State ($)",
+          x: 0.10,
+        },
+          geo:{
+              scope: 'usa',
+              showlakes: true,
+              lakecolor: 'rgb(255,255,255)'
+          },
+          width: 500,
+          height: 375,
+          margin: {
+            l: 20,
+            r: 200,
+            b: 60,
+            t: 100
+          }
+      };
+
+      Plotly.newPlot("chloropleth", mapData, layout, config);
+});
