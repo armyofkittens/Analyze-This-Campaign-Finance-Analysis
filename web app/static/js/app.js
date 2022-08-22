@@ -223,8 +223,8 @@ var barLayout2 = {
   margin: {
     l: 50,
     r: 150,
-    b: 145,
-    t: 55
+    b: 135,
+    t: 65
   }
 };
 // Plot  
