@@ -334,7 +334,7 @@ Plotly.newPlot("win_counts", barData3, barLayout3, config);
 
 ////////////// HEATMAP /////////////////////
 
-d3.csv("../2022 predictions/states_raised_totals.csv", function(err, rows){
+d3.csv("states_raised_totals.csv", function(err, rows){
       function unpack(rows, key) {
           return rows.map(function(row) { return row[key]; });
       }
