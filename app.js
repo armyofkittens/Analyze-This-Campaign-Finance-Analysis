@@ -65,7 +65,10 @@ function updateFilters() {
       let userInput = d3.select(`#${key}`).property("value");
       console.log(key);
       console.log(userInput);
-      filteredData = filteredData.filter(row => row[key] === userInput);
+      if (key === 'raised_total') {
+        filteredData = filteredData.filter(row => row[key] > userInput);
+      }
+      else {filteredData = filteredData.filter(row => row[key] === userInput);}
     });
   
     // Finally, rebuild the table using the filtered data
