@@ -63,10 +63,25 @@ function updateFilters() {
     // matches the filter values
     Object.keys(filters).forEach( key => {
       let userInput = d3.select(`#${key}`).property("value");
-      console.log(key);
-      console.log(userInput);
+      console.log(`key: ${key}`);
+      console.log(`user input: ${userInput}`);
       if (key === 'raised_total') {
-        filteredData = filteredData.filter(row => row[key] > userInput);
+        if (userInput.slice(0,2) === '><') {
+          let inputSplit = userInput.split(",")
+          console.log(inputSplit);
+          filteredData = filteredData.filter(row => row[key] > userInput.slice(2
+          ,inputSplit[0].length));
+          filteredData = filteredData.filter(row => row[key] < userInput.slice(inputSplit[0].length + 1
+            ,userInput.length));
+          }
+        else if (userInput.slice(0,1) === '>') {
+        filteredData = filteredData.filter(row => row[key] > userInput.slice(1
+          ,userInput.length));
+        }
+        else if (userInput.slice(0,1) === '<') {
+          filteredData = filteredData.filter(row => row[key] < userInput.slice(1
+            ,userInput.length));
+          }
       }
       else {filteredData = filteredData.filter(row => row[key] === userInput);}
     });
