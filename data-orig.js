@@ -1,4 +1,4 @@
-var data = [
+[
     {
         "first_last_party":"AGUAYO, DENNIS W. 'DENNY'",
         "Cand_Office_St":"AK",
