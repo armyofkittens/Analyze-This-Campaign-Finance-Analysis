@@ -8,3 +8,10 @@ body {
     text-align: center;
 }
 
+h5.dash {
+    font-size: 1.3em;
+    background-color: rgb(238, 231, 13, 0.6);
+    margin: 15px;
+    padding: 25px;
+    text-align: center;
+}
