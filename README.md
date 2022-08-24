@@ -58,6 +58,15 @@ In this project we will be utilizing a data set of Kaggle that contains data fro
 
 We will be using Postgres SQL to create the connections through out are data and put together a cohesive and clear picture.
 
+<br>
+
+## SQL Database
+
+**Entity Relationship Diagram**
+![QuickDBD-export](https://user-images.githubusercontent.com/100544761/186538007-133609c5-38b7-4f2e-9f8c-cbab14c86a76.png)
+
+**PgAdmin4** - Postgres Table
+<img width="1495" alt="Screen Shot 2022-08-20 at 2 27 47 PM (1)" src="https://user-images.githubusercontent.com/100544761/186538135-26f092b1-620d-4664-adb4-c869cad3daf5.png">
 
 <br>
 
@@ -75,11 +84,20 @@ We will be using Postgres SQL to create the connections through out are data and
 **Standardize Data with StandardScaler()**
 ![Screen Shot 2022-08-24 at 5 25 01 PM](https://user-images.githubusercontent.com/100544761/186534256-95b9b39c-a82b-499e-ad75-e857d09d8898.png)
 
-**Build/Test** - analyze accuracy score
+**Train/Test** - analyze accuracy score
 ![Screen Shot 2022-08-24 at 5 10 26 PM](https://user-images.githubusercontent.com/100544761/186532545-2eb1a3f0-deec-4183-a8de-9e84803b5e18.png)
 
-### Predict 2022 Election
-Data downloaded from [Federal Election Commision](https://www.fec.gov/data/browse-data/?tab=candidates).  Columns were selected, formatted, cleaned, and combined to calculate columns resembling the structure of training data then preprocessed and fed to RFC model.
+<br>
+
+## Predict 2022 Election
+
+**Raw Data**<br>
+Data downloaded from [Federal Election Commision](https://www.fec.gov/data/browse-data/?tab=candidates).  
+![ ](https://user-images.githubusercontent.com/100544761/186538551-5be48c78-533b-45f4-8c57-9ba487536734.png)
+![Screen Shot 2022-08-24 at 6 02 42 PM](https://user-images.githubusercontent.com/100544761/186538573-2b2c6548-f65b-43ab-9f18-60de0f0a4eba.png)
+
+
+Columns were selected, formatted, cleaned, and combined to calculate columns resembling the structure of training data then preprocessed and fed to RFC model.
 
 ![Screen Shot 2022-08-24 at 5 35 44 PM](https://user-images.githubusercontent.com/100544761/186535572-ae53ec1e-b2e5-4b38-9b83-a3daf7af7d3e.png)
 
@@ -113,6 +131,8 @@ Data downloaded from [Federal Election Commision](https://www.fec.gov/data/brows
 
 **Clustering 3D Graph**
 ![K-MeansClustering_3D_graph](https://user-images.githubusercontent.com/100544761/186533225-23603b4d-e7a7-4819-8e88-49a9f44961ab.png)
+
+<br>
 
 ## Web Page - [Link](https://m-miley.github.io/Analyze-This-Campaign-Finance-Analysis/)
 
