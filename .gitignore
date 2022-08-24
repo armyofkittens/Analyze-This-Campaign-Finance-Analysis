@@ -3,7 +3,8 @@ data/
 2022 predictions/all_seats_prediction_differences_adjusted.csv.zip
 app copy.js
 Python scripts/
-
+Machine Learning/
+web app/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
