@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022 Election Predictions</title>
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+        />
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body class="'bg-light">
+    <!-- Navigation Bar -->
+    <div class="wrapper" >
+        <body id="page-top">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg bg-dark fixed-top text-uppercase" id="mainNav">
+                <div class="container">
+                    <button class="navbar-toggler navbar-toggler-right text-uppercase text-white rounded" type="button"
+                        data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link " href="./index.html">2022 Predictions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+    </div>
+    <!-- Jumbotron Header -->
+    <br>
+    <br>
+    <br>
+    <div class="jumbotron" id="welcome">
+        <h1 style="background-color:white" class="display-4">Past Data: 1990-2016</h1>
+    </div>
+    <!-- Article, Title and Paragraph -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Campaign Financial Analysis<br><small>DU Bootcamp Final Project</small></h3>
+            </div>
+            <div class="col-md-9">
+                <p>
+                    Data provided by <a href="https://www.opensecrets.org/">Open Secrets</a> that 
+                    includes information on campaign funding and election results from 1990-2016. 
+                    This data was analyzed and used to create the following visualizations regarding 
+                    financial contributions made from both PACs and indicviduals to candidates:<br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <!--Past Data Visualizations-->
+                <div id="contribution_heatmap"></div><br><br><br>
+                <!-- Plotly Total Contributions Line Chart -->
+                <div id="total_line"></div>
+                <!-- Plotly Pac Contributions Line Chart -->
+                <div id="pac_line"></div>
+                <!-- Plotly Individual Contributions Line Chart -->
+                <div id="indv_line"></div>
+                
+            </div>
+        </div>
+    </div>
+    <!--Link to D3.js, data.js, app.js CDN --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src='https://cdn.plot.ly/plotly-2.14.0.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    <script src='https://cdn.plot.ly/plotly-2.14.0.min.js'></script>
+    <script src="static/js/cycle_year.js"></script>
+    <script src="static/js/past_data_app.js"></script>
+    <script src="static/js/data.js"></script>
+    <script src="static/js/app.js"></script>
+    
+</body>
+</html>
