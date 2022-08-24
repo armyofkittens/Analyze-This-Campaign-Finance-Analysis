@@ -1,8 +1,8 @@
 /////////////// PAST DATA HEATMAP ///////////////
-d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/gapminder_with_codes.csv", function(err, rows){
+d3.csv("https://raw.githubusercontent.com/armyofkittens/Analyze-This-Campaign-Finance-Analysis/Lora/Past%20Data/cycle_year.csv", function(err, rows){
 
   function filter_and_unpack(rows, key, year) {
-  return rows.filter(row => row['year'] == year).map(row => row[key])
+  return rows.filter(row => row['cycle'] == year).map(row => row[key])
   }
 
   var frames = []
@@ -11,8 +11,8 @@ d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/gapminder_with_
   var n = 13;
   var num = 1990;
   for (var i = 0; i <= n; i++) {
-    var z = filter_and_unpack(rows, 'lifeExp', num)
-    var locations = filter_and_unpack(rows, 'iso_alpha', num)
+    var z = filter_and_unpack(rows, 'raised_total', num)
+    var locations = filter_and_unpack(rows, 'state', num)
     frames[i] = {data: [{z: z, locations: locations, text: locations}], name: num}
     slider_steps.push ({
         label: num.toString(),
@@ -27,7 +27,7 @@ d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/gapminder_with_
     num = num + 2
   }
 
-var data = [{
+var heatData = [{
       type: 'choropleth',
       locationmode: 'USA-states',
       locations: frames[0].data[0].locations,
@@ -35,10 +35,11 @@ var data = [{
       text: frames[0].data[0].locations,
       zauto: false,
       zmin: 30,
-      zmax: 90
+      zmax: 10000000,
+      colorscale: 'RdBu'
 
 }];
-var layout = {
+var heatLayout = {
     title: 'Total Contributions By State<br>1990 - 2016',
     geo:{
        scope: 'usa',
@@ -114,7 +115,7 @@ var layout = {
     }]
 };
 
-Plotly.newPlot('contribution_heatmap', data, layout).then(function() {
+Plotly.newPlot('contribution_heatmap', heatData, heatLayout).then(function() {
     Plotly.addFrames('contribution_heatmap', frames);
   });
 })
