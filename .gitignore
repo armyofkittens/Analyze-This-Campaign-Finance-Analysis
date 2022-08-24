@@ -1,6 +1,8 @@
 data/
 .Rhistory
 2022 predictions/all_seats_prediction_differences_adjusted.csv.zip
+app copy.js
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
