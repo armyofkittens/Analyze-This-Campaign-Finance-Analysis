@@ -61,7 +61,7 @@ We will be using Postgres SQL to create the connections through out are data and
 
 <br>
 
-## Machine Learning Model
+## Machine Learning Model - Random Forest Classifier
 
 **Feature Selection**
 ![Screen Shot 2022-08-24 at 4 20 22 PM](https://user-images.githubusercontent.com/100544761/186532159-7696bb83-bdd1-4934-8480-fb04ff420e8e.png)
@@ -75,25 +75,32 @@ We will be using Postgres SQL to create the connections through out are data and
 **Standardize Data with StandardScaler()**
 ![Screen Shot 2022-08-24 at 5 25 01 PM](https://user-images.githubusercontent.com/100544761/186534256-95b9b39c-a82b-499e-ad75-e857d09d8898.png)
 
-<br>
-
-### Random Forest Classifier
-
-**Model**
+**Build/Test** - analyze accuracy score
 ![Screen Shot 2022-08-24 at 5 10 26 PM](https://user-images.githubusercontent.com/100544761/186532545-2eb1a3f0-deec-4183-a8de-9e84803b5e18.png)
 
 ### Predict 2022 Election
+Data downloaded from [Federal Election Commision](https://www.fec.gov/data/browse-data/?tab=candidates).  Columns were selected, formatted, cleaned, and combined to calculate columns resembling the structure of training data then preprocessed and fed to RFC model.
 
+![Screen Shot 2022-08-24 at 5 35 44 PM](https://user-images.githubusercontent.com/100544761/186535572-ae53ec1e-b2e5-4b38-9b83-a3daf7af7d3e.png)
 
+**Prediction Results** - first 5 rows
+![Screen Shot 2022-08-24 at 5 37 31 PM](https://user-images.githubusercontent.com/100544761/186535769-ebc6c743-63bc-40a7-9f44-fb9f741719ae.png)
 
+**Number of Wins vs. Losses**<br>
+![Screen Shot 2022-08-24 at 5 39 07 PM](https://user-images.githubusercontent.com/100544761/186535996-afc44278-325a-42a5-8494-8ad6881248d8.png)
 
-**Seat Requirement Differentials**<br>
+**Seat Requirement Differentials**<br> - difference in expected seats and predicted winning seats
 ![2022 Prediction Results diff](https://user-images.githubusercontent.com/100544761/186533432-4bf7c43a-eba4-44f0-b448-f57a2464b413.png)
 
-**Adjusted to fulfill State seat requirements**
+**Adjusted to fulfill State seat requirements**<br>
+68 candidates were adjusted - 40 from L to W (with highest raised_total), 28 from W to L (with lowest raised_total) in order to attempt satisfying seat requirements.  An improvement overall but not exact.  Full list of adjusted politicians in ML_modeling_v1.ipynb<br><br>
+*Seat Requirement Differentials* - after adjustment<br>
+![after-adjustments](https://user-images.githubusercontent.com/100544761/186536605-33f5b637-f05f-4530-aced-0bf72b73cb67.png)
+
+<br>
 
 
-### KMeans Clustering
+## KMeans Clustering
 
 **Feature Selection** - added State
 ![Screen Shot 2022-08-24 at 5 11 44 PM](https://user-images.githubusercontent.com/100544761/186532723-287139dd-2808-44dd-aa19-22dc7a7c768a.png)
@@ -107,5 +114,15 @@ We will be using Postgres SQL to create the connections through out are data and
 **Clustering 3D Graph**
 ![K-MeansClustering_3D_graph](https://user-images.githubusercontent.com/100544761/186533225-23603b4d-e7a7-4819-8e88-49a9f44961ab.png)
 
-## Web Page
+## Web Page - [Link](https://m-miley.github.io/Analyze-This-Campaign-Finance-Analysis/)
+
+**Page 1** - Prediction Results + 2022 Candidate Dashboard
+![Screen Shot 2022-08-24 at 5 49 13 PM](https://user-images.githubusercontent.com/100544761/186537085-2c0dab18-64cd-43aa-b87f-a1d76f972054.png)
+![Screen Shot 2022-08-24 at 5 49 34 PM](https://user-images.githubusercontent.com/100544761/186537114-2d1af1ee-3fbc-4c36-9748-57e15d4de055.png)
+
+**Page 2** - Past Data Dashboard
+![Screen Shot 2022-08-24 at 5 50 42 PM](https://user-images.githubusercontent.com/100544761/186537357-cbf71a57-78df-46da-8e0d-01e8c2314811.png)
+![Screen Shot 2022-08-24 at 5 50 58 PM](https://user-images.githubusercontent.com/100544761/186537284-16c6c234-5826-4ae0-8aca-4d4277a8c0d0.png)
+![Screen Shot 2022-08-24 at 5 51 12 PM](https://user-images.githubusercontent.com/100544761/186537299-21e526ee-8faf-44cc-8fe6-ea16deb113a9.png)
+![Screen Shot 2022-08-24 at 5 51 21 PM](https://user-images.githubusercontent.com/100544761/186537317-23c691fc-5c10-4970-bbd7-0d60772a3d5d.png)
 
