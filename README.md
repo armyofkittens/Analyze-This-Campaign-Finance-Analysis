@@ -155,3 +155,13 @@ Columns were selected, formatted, cleaned, and combined to calculate columns res
 ## Conclusion
 
 Our initial hypothesis was that funding sources would influence election outcomes.  What we found was that indeed it does, however, incumbency status was perhaps the greatest indicator for a successful campaign.  All in all this was an insightful analysis on Election data.  With a 93% accuracy score, we can be pretty confident in the predictions.  Our dashboards indicate the distribution of funding across the United States, each party's presence in the races and their resources, how the distribution of capital disseminates over time, and more.  We invite you to explore our website, peer into the crystal ball, and return after the votes are counted to compare our predictions with reality.  Will your candidate win?  Only time will tell...
+
+<br>
+
+## Contributors
+
+Lora Leonida<br>
+Neekoh Tablate<br>
+Ryan Knauff<br>
+Cayli Swartz<br>
+[Marshall Miley](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
