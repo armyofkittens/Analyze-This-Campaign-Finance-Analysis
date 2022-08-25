@@ -146,3 +146,8 @@ Columns were selected, formatted, cleaned, and combined to calculate columns res
 ![Screen Shot 2022-08-24 at 5 51 12 PM](https://user-images.githubusercontent.com/100544761/186537299-21e526ee-8faf-44cc-8fe6-ea16deb113a9.png)
 ![Screen Shot 2022-08-24 at 5 51 21 PM](https://user-images.githubusercontent.com/100544761/186537317-23c691fc-5c10-4970-bbd7-0d60772a3d5d.png)
 
+<br>
+
+## Conclusion
+
+Our initial hypothesis was that funding sources would influence election outcomes.  What we found was that indeed it does, however, incumbency status was perhaps the greatest indicator for a successful campaign.  All in all this was an insightful analysis on Election data.  With a 93% accuracy score, we can be pretty confident in the predictions.  Our dashboards indicate the distribution of funding across the United States, each party's presence in the races and their resources, how the distribution of capital disseminates over time, and more.  We invite you to explore our website, peer into the crystal ball, and return after the votes are counted to compare our predictions with reality.  Will your candidate win?  Only time will tell...
