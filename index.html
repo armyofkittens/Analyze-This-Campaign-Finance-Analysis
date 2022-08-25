@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022 Election Predictions</title>
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+        />
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" href="static/images/flag.jpeg">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body class="'bg-light">
+    <!-- Navigation Bar -->
+    <div class="wrapper" >
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <a class="navbar-brand" value="" href="#welcome"></a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="past_data.html">Past Data</a>
+                    </li>
+        </nav>
+    </div>
+
+    <!-- Jumbotron Header -->
+    <div class="jumbotron" id="welcome">
+        <h1 style="background-color:white" class="display-4">2022 Election Predictions</h1>
+    </div>
+
+    <!-- Article, Title and Paragraph -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Machine Learning Predicts Election<br><small>DU Bootcamp Final Project</small></h3>
+            </div>
+            <div class="col-md-9">
+                <p>
+                    Welcome to the 2022 Election Predictive Analysis!  For better or for worse, this websites 
+                    reveals what is possibly in store for us at the end of this year’s election cycle.  
+                    Included are Congressional seats open for election and re-election.  Results are completely 
+                    unbiased and chosen by our machine learning model.  It was trained with 26 years of data 
+                    from past elections (1990-2016), provided by <a href="https://www.opensecrets.org/">Open Secrets</a>, 
+                    using features such as party, incumbency, and all funding sources.  The model is Random Forest 
+                    Classifier and passed with a whopping 93% accuracy score.  New data, from the 
+                    <a href="https://www.fec.gov/data/browse-data/?tab=candidates">Federal Election Commision</a>, 
+                    for the 2022 cycle was then fed into the model and results were generated.  Please use the filters
+                    on the left hand side of the page to identify the winners.  Predictions are as follows:<br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter and Table -->
+    <!-- Filter -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <form class="bg-light">
+                    <b style="color:rgb(10, 124, 46);">Filter Search</b>
+                    <ul class="list-group bg-light">
+                        <li class="list-group-item bg-light">
+                            <label for="date">Candidate</label>
+                            <input type="text" placeholder="LAST, FIRST" id="first_last_party" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">State</label>
+                            <input type="text" placeholder="ST" id="Cand_Office_St" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">Office</label>
+                            <input type="text" placeholder="House/Senate" id="Cand_Office" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">Party</label>
+                            <input type="text" placeholder="R/D/3" id="party" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">CRPICO</label>
+                            <input type="text" placeholder="C/I/O" id="crpico" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">Raised_Total (>,<, or ><)</label>
+                            <input type="text" placeholder="ex: ><1,100" id="raised_total" />
+                        </li>
+                        <li class="list-group-item bg-light">
+                            <label for="date">Prediction</label>
+                            <input type="text" placeholder="W/L" id="preds" />
+                        </li>
+                    </ul>
+                </form>
+                <p><a class="btn btn-info btn-lg" href="index.html" role="button">Clear and Reload</a></p>
+                
+                <!---------- DASHBOARD ------------->
+                <div class="dashboard">
+                    <h5 class="dash">2022 Candidate Dashboard</h5>
+                </div>
+                
+                <!-- Plotly chloropleth map -->
+                <div id="chloropleth"></div>
+                <!-- Plotly bar chart -->
+                <div id="party_count"></div>
+                <!-- Plotly bar chart -->
+                <div id="party_dollars"></div>
+                <!-- Plotly bar chart -->
+                <div id="win_counts"></div>
+                
+            </div>
+            <!-- Table -->
+            <div class="col-md-9">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Candidate</th>
+                            <th>State</th>
+                            <th>Office</th>
+                            <th>Party</th>
+                            <th>CRPICO</th>
+                            <th>Raised_From_Pacs</th>
+                            <th>Raised_From_Individuals</th>
+                            <th>Raised_Total</th>
+                            <th>Raised_Unitemized</th>
+                            <th>Prediction</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Link to D3.js, data.js, app.js CDN --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
