@@ -1,5 +1,9 @@
 # Analyze This! Campaign Finance Analysis
 
+## Overview
+
+The purpose of this analysis is to establish a functional relational database using bulk election data, build a machine learning model that is capable of accurately predicting election results, create dashboards accessible to the public, and explore the distribution of funding across parties, candidates, and the United States.  We will then present the insights to a group of peers in a 12 minute presentation.  
+
 ## Outline
 
 ### Communication Protocols
