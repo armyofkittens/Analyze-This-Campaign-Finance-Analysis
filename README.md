@@ -57,10 +57,11 @@ RESULT:
 
 ### Database
 
-In this project we will be utilizing a data set of Kaggle that contains data from campaign finance data starting in 1990. The data is originally sourced from the website OpenSecrets, a reputable nonpartisan, independent, and nonprofit organization that has been in operation since 1996. We have access to a handful of different data sets through Kaggle including candidates, backer information, committee information, pac information and more that we will be tying together via common keys such as candidate ID with SQL. We will accomplish this through inner joins on candidate ID, and create new tables with the information needed, so that we can analyze the election results based on financial support.
+In this project we will be utilizing a data set of Kaggle that contains data from campaign finance data starting in 1990. The data is originally sourced from the website OpenSecrets, a reputable nonpartisan, independent, and nonprofit organization that has been in operation since 1996. We have access to a handful of different data sets through Kaggle including candidates, backer information, committee information, pac information and more that we will be tying together via common keys with SQL. We will accomplish this through inner joins, and create new tables with the information needed, so that we can analyze the election results based on financial support.
 
+We took this data and cleaned it by removing duplicate rows, nulls, converting date to datetime format and selected only relevant columns.
 
-We will be using Postgres SQL to create the connections through out are data and put together a cohesive and clear picture.
+We used Postgres SQL to create the connections through out are data and put together a cohesive and clear picture. When connecting the tables we noticed that the candidate ID was not unique enough because many candidates ran in more than one election cycle and received donations from more than one place which caused a many to many relationship. In order to create a one to many relationship and properly attribute the donations to the correct election we created a new key. This key was a combination of both the candidate ID and the year that they ran. This allowed us to ensure that the correct contributions were being matched to the correct year and the data was being correctly portrayed. 
 
 <br>
 
