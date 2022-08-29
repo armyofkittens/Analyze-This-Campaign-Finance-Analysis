@@ -41,7 +41,7 @@
     <br>
     <br>
     <div class="jumbotron" id="welcome">
-        <h1 style="background-color:white" class="display-4">Past Data: 1990-2016</h1>
+        <h1  style = "background-color:white" class="display-4">Past Data: 1990-2016</h1>
     </div>
     <!-- Article, Title and Paragraph -->
     <div class="container-fluid">
@@ -51,10 +51,12 @@
             </div>
             <div class="col-md-9">
                 <p>
-                    Data provided by <a href="https://www.opensecrets.org/">Open Secrets</a> that 
-                    includes information on campaign funding and election results from 1990-2016. 
-                    This data was analyzed and used to create the following visualizations regarding 
-                    financial contributions made from both PACs and indicviduals to candidates:<br><br>
+                    Welcome to our past data page! The data provided 
+                    by <a href="https://www.opensecrets.org/">Open Secrets</a> includes 
+                    information on campaign funding and election results from 1990-2016. 
+                    This data was analyzed and visualizations were created regarding financial 
+                    contributions made from both PACs and individuals. Below you can see
+                    how the contributions varied by state, election type, and party:<br><br>
                 </p>
             </div>
         </div>
@@ -74,6 +76,11 @@
                 <div id="pac_line"></div>
                 <!-- Plotly Individual Contributions Line Chart -->
                 <div id="indv_line"></div>
+                <!-- Plotly Total Contributions Bar Chart -->
+                <div id="raised_bar"></div>
+                <!-- Plotly Wins Bar Chart -->
+                <div id="wins_bar"></div>
+
                 
             </div>
         </div>
@@ -83,10 +90,10 @@
     <script src='https://cdn.plot.ly/plotly-2.14.0.min.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
     <script src='https://cdn.plot.ly/plotly-2.14.0.min.js'></script>
-    <script src="cycle_year.js"></script>
-    <script src="past_data_app.js"></script>
-    <script src="data.js"></script>
-    <script src="app.js"></script>
+    <script src="static/js/cycle_year.js"></script>
+    <script src="static/js/past_data_app.js"></script>
+    <script src="static/js/data.js"></script>
+    <script src="static/js/app.js"></script>
     
 </body>
 </html>
